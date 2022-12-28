@@ -217,9 +217,25 @@ def set_axes_equal(ax):
     return ax
 
 
-def update_matplotlib_rc_parameters():
-    """Run and configure visualization parameters."""
-    sns.set(style='ticks', font='serif', font_scale=1.25)
+def update_matplotlib_rc_parameters(is_3d=False):
+    """Run and configure visualization parameters.
+    
+    Parameters
+    ----------
+    is_3d : bool, optional
+        Set to true for 3d plotting adjustments.
+    
+    Returns
+    -------
+    None
+    """
+    if is_3d:
+        sns.set(style='ticks', font='serif', font_scale=1.5)
+        plt.rcParams.update({
+            'axes.labelpad': 9
+        })
+    else:
+        sns.set(style='ticks', font='serif', font_scale=1.25)
     plt.rcParams.update({
         'lines.linewidth': 3,
         'lines.markersize': 10,
