@@ -1,0 +1,146 @@
+\documentclass[12pt]{report}
+
+% input characters
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+
+% page format
+\usepackage[a4paper,width=150mm,top=30mm,bottom=30mm,bindingoffset=5mm]{geometry}
+
+% configure fancy footer and header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[RE]{}
+\fancyhead[LO]{Doctoral Qualifying Exam}
+\fancyhead[LE,RO]{\thepage}
+\fancyfoot{}
+
+% bibliography
+\usepackage[sorting=none,style=ieee]{biblatex}
+\addbibresource{bibliography.bib}
+
+% referencing
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise]{cleveref}
+
+% tables
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}  % needs to be loaded before pgf
+
+% figures
+\usepackage[pdftex]{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{contour}
+\usepackage{tikz}
+\usetikzlibrary{calc, positioning, shapes, backgrounds, fit, arrows}
+\usepackage{pgf-spectra}
+
+% SI units in text and math mode
+\usepackage[detect-all]{siunitx}
+\sisetup{per-mode=symbol}
+
+% abbreviations
+\usepackage[acronym,nonumberlist]{glossaries-prefix}
+\makeglossaries
+\newacronym{em}{EM}{electromagnetic}
+\newacronym{lf}{LF}{low frequency}
+\newacronym{rf}{RF}{radio-frequency}
+\newacronym{mmw}{MMW}{millimeter waves}
+\newacronym{ir}{IR}{infrared}
+\newacronym{uv}{UV}{ultraviolet}
+\newacronym{br}{BR}{basic restriction}
+\newacronym{drl}{DRL}{dosimetric reference limit}
+\newacronym{rl}{RL}{reference level}
+\newacronym{erl}{ERL}{exposure reference level}
+\newacronym{sar}{SAR}{specific absorption rate}
+\newacronym{ipd}{IPD}{incident power density}
+\newacronym{tpd}{TPD}{transmitted power density}
+\newacronym{apd}{APD}{absorbed/epithelial power density}
+\newacronym{sa}{SA}{specific energy absorption}
+\newacronym{Einc}{E$_\text{inc}$}{incident electric field strength}
+\newacronym{Hinc}{H$_\text{inc}$}{incident magnetic field strength}
+\newacronym{Uinc}{H$_\text{inc}$}{incident energy density}
+\newacronym{Ueq}{H$_\text{eq}$}{plane-wave equivalent incident energy density}
+\newacronym{icnirp}{ICNIRP}{International Commission on Non-Ionizing Radiation Protection}
+\newacronym{ieee}{IEEE}{Institute of Electrical and Electronics Engineers}
+\newacronym{ansi}{ANSI}{American National Standards Institute}
+\newacronym{mimo}{MIMO}{multiple input, multiple
+output}
+\newacronym{5g}{5G}{5th generation}
+\newacronym{fdtd}{FDTD}{finite difference time-domain}
+\newacronym{fem}{FEM}{finite element method}
+\newacronym{bem}{BEM}{boundary element method}
+\newacronym{mom}{MoM}{method of moments}
+\newacronym{rms}{RMS}{root-mean-square}
+\newacronym{sota}{SotA}{state-of-the-art}
+\glsaddall
+
+% begin the document
+\begin{document}
+
+% title page
+\input{chapters/01_Title_Page}
+
+% title page in Croatian
+\input{chapters/02_Naslovna_Stranica}
+
+% affiliation page
+\input{chapters/03_Affiliation}
+\pagenumbering{roman}
+
+% table of contents
+\tableofcontents
+
+% chapter 1 - introduction - 1st page of the main matter
+\clearpage
+\pagenumbering{arabic}
+\input{chapters/04_Introduction}
+
+% chapter 2
+\clearpage
+\input{chapters/04_Human_Exposure_EMFs.tex}
+
+% chapter 3 
+\clearpage
+\input{chapters/04_Methods.tex}
+
+% chapter 4
+\clearpage
+\input{chapters/04_Results.tex}
+
+% chapter 5 - conclusion
+\clearpage
+\input{chapters/04_Conclusion.tex}
+
+% references - add to ToC without the number of chapter
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\markboth{Bibliography}{Bibliography}
+\printbibliography
+
+% abbreviations - add to ToC without the number of chapter
+\phantomsection
+\addcontentsline{toc}{chapter}{Acronyms}
+\markboth{Acronyms}{Acronyms}
+\printglossaries
+
+% abstract - add to ToC without the number of chapter
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+\markboth{Abstract}{Abstract}
+\input{chapters/05_Abstract}
+
+% abstract in Croatian - add to ToC without the number of chapter
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Sažetak}
+\markboth{Sažetak}{Sažetak}
+\input{chapters/06_Sažetak}
+
+\end{document}

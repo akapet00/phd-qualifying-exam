@@ -1,0 +1,26 @@
+\chapter{Conclusion}
+
+With ever increasing number of \gls{5g} personal wireless devices operating above \SI{6}{\GHz}, there is a growing public concern about biological safety.
+Thus, the \gls{icnirp} guidelines and \gls{ieee} standard for limiting exposure to \gls{em} fields have recently undergone major revisions.
+One prominent technical update is the introduction of the newly defined physical quantity as the \gls{br}/\gls{drl}.
+Namely, the \gls{apd} is now to be used for compliance assessment above \SI{6}{\GHz}.
+Because its use is limited for local exposure, the \gls{apd} should be spatially averaged over \SI{4}{\cm\squared} control surface that lies on the front face of the tissue equivalent block.
+
+The \gls{apd} and its free space counterpart \gls{ipd}, that is to be used for exposure assessment as the \gls{rl}/\gls{erl}, are proven to be valid proxies for maximum temperature rise on the exposed skin surface.
+However, if the curvature of the tissue is pronounced, recent literature points to the fact that the extracted values can be underestimated by using planar averaging surfaces.
+Still, most research in computational dosimetry on which the international exposure limits are based use flat tissue-equivalent models to simplify the problem geometry.
+Depending on the ratio of the penetration depth and local curvature radius of the exposed tissue, this approach may lead to inaccurate estimates of the power absorption.
+It is thus of utmost importance to account for the geometrical complexity of the exposed models.
+
+This work is the result of an effort to review the complete literature that deals closely with the evaluation of area-averaged dosimetric quantities.
+Of special interest are the averaging technique itself through the lens of numerical approximation of the relevant surface integrals.
+The generation of the parametric surface on which the integration points are distributed, the shape and dimensions of that surface, the influence of curvature and other realistic morphological features during parametrization from 3-D to 2-D space, etc., are all topics that are also taken into account.
+Before that, the general introduction to human exposure to \gls{em} fields, especially in the era of \gls{5g}, is given.
+Loosely defined concepts of the derivation of the \gls{apd} from \gls{sar} used as the \gls{br}/\gls{drl} at lower frequencies, as well as the equivalence of different prescribed definitions of both the \gls{apd} and \gls{ipd} are elaborated in detail and supported by relevant literature.
+Advanced numerical approaches for the assessment of the \gls{apd} and \gls{ipd} on conformal surfaces of anatomical human models are addressed.
+
+This work is in accordance with discussions currently held within the Working Group 7 of the \gls{ieee} international committee on \gls{em} safety (Technical Committee 95, Subcommittee 6).
+The goal of this working group is to resolve uncertainties related to numerical models and integration methods, but also to the geometrical shape of the averaging surface for the assessment of the \gls{apd} and \gls{ipd} at the \SIrange[range-units=single,range-phrase=--]{6}{300}{\GHz} range.
+Special emphasis is on the average schemes and assessment methods of the \gls{apd} on non-planar body parts.
+Motivated by previous topics, this work finally starts the discussion of numerical approximation of surface integrals across non-canonical surfaces of morphologically-accurate tissue models.
+This is left as an open problem to be addressed through future work.

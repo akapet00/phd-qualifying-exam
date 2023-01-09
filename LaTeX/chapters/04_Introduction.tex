@@ -1,0 +1,29 @@
+\chapter{Introduction}
+
+With the proliferation of personal wireless devices operating in data-intensive regimes, the utilization of hitherto ill-suited parts of the radio spectrum have became necessity.
+This is mainly due to the increasing demand for high data rates and more reliable service connections~\cite{Wu2015Safe}.
+Early network performance improvements were reflected through the increased channel capacity and reduced latency owing to the emergence of the \gls{5g} wireless networks -- a novel technology standard for broadband cellular networks~\cite{Andrews2014What}.
+The key novel features such as the carrier aggregation, \gls{mimo} technology, beam-forming, etc., accompanied by the radio spectrum expansion to the high micro and \gls{mmw}, the ever growing interest in, as well as concerns about, biological safety due to exposure to \gls{rf} \gls{em} fields have come about~\cite{Zhadobov2011Millimeter}.
+
+To ensure safe use of such wireless devices commonly being active in close proximity to the human body, various international bodies have determined exposure limits derived upon peer-reviewed scientific literature that pertains to the \gls{em} field-associated bioeffects classified as potentially harmful~\cite{ICNIRP2020Principles}.
+A well-established and understood effect of \gls{em} fields on human tissue for exposure above \SI{6}{\GHz}, which is the primary interest of this work, is temperature rise at the surface of the exposed tissue~\cite{Ziskin2018Tissue}.
+The \gls{icnirp} guidelines~\cite{ICNIRP2020Guidelines} and \gls{ieee} International Committee on Electromagnetic Safety C95.1 standard~\cite{IEEE2019Standard} have both recently undergone a major revision to fill the gaps in knowledge and update safety levels regarding the human exposure to \gls{em} fields up to \SI{300}{\GHz} accordingly.
+The most notable technical change is the introduction of the \gls{apd} as the \gls{br}~\cite{ICNIRP2020Guidelines} or \gls{drl}~\cite{IEEE2019Standard}, respectively, for localized exposure above \SI{6}{\GHz}.
+This dosimetric quantity represents the spatially averaged power density absorbed at the tissue surface and is derived from the levels of \gls{rf} \gls{em} fields that correspond to the adverse health effects in terms of temperature rise.
+Additionally, in order to provide practical means of demonstrating compliance, the \gls{rl}~\cite{ICNIRP2020Guidelines} (or \gls{erl}~\cite{IEEE2019Standard}) has been redefined in terms of the \gls{ipd} spatially averaged on the same area as the \gls{apd}, but assuming conditions of free space.
+
+According to aforementioned exposure limits, the \gls{apd} and \gls{ipd} are to be averaged over a square-shaped control plane of \SI{4}{\cm\squared} to achieve continuity with volume-averaged dosimetric quantities at lower frequencies~\cite{Foster2016Thermal,Hashimoto2017On}.
+To account for narrow beam patterns present above \SI{30}{\GHz}, power densities should additionally be averaged over \SI{1}{\cm\squared} provided that the spatially averaged value is at most two times the value for the corresponding \SI{4}{\cm\squared} averaging area.
+Even though the validity of the \gls{apd} and \gls{ipd} for compliance assessment has been established through numerous computational and experimental studies~\cite{Hirata2021Human}, there are still ambiguities with the following standing out in particular.
+Namely, the assessment of the \gls{apd} and \gls{ipd} on non-planar body parts with the curvature radius comparable to the wavelength of the impinging \gls{em} field.
+Thus, this work aims to provide a full overview of the \gls{sota} dosimetric and exposure assessment literature concerning averaging schemes for the assessment of the \gls{apd} and \gls{ipd} numerically on such non-planar body parts.
+It is of utmost importance to appropriately develop morphologically-accurate \gls{em} models and corresponding averaging techniques to be able to account for irregularities of the exposed tissue surface in cases where the standard evaluation plane represents a crude approximation and potentially leads to underestimation of extracted dosimetric quantities.
+
+The outline of this work is as follows.
+In \cref{chap:human-exposure-to-emfs}, the overview of the basics of the interaction between \gls{em} fields at the \SIrange[range-units=single,range-phrase=--]{6}{300}{\GHz} range with the human body is given.
+From first principles within the framework of the Maxwell equations, to the accurate description of non-ionizing radiation on which the principles of limiting human exposure are based on, this chapter first and foremost serves to define, but also to justify the use of the \gls{br}/\gls{drl} and \gls{rl}/\gls{erl}, respectively.
+
+A deep dive in mathematical formulations with the special emphasis on derivation of the \gls{apd} and \gls{ipd} from the Poynting theorem, which serves as a foundational statement of conservation of energy within electrodynamics, is provided in \cref{chap:methods}.
+
+Finally, the state of the research is outlined in \cref{chap:results}.
+Starting from the tissue modelling above \SI{6}{\GHz} to more nuanced subjects such as improving the rigor of the sole definition, but also application methods of averaging techniques.
