@@ -1,4 +1,4 @@
-# PhD Qaulifying Exam
+# PhD Qualifying Exam
 
 This repository contains the code I used for generating figures and performing analysis that pertains to my PhD qualifying exam.
 
